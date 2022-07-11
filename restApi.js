@@ -1,6 +1,7 @@
 const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
+const swaggerDocument = require('./swagger.json');
 const server = express();
 
 const swaggerOptions = {
@@ -21,7 +22,7 @@ const swaggerOptions = {
   
   const PORT = process.env.PORT || 3000;
   const swaggerDocs = swaggerJsDoc(swaggerOptions);
-  server.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+  server.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 const persons = ['Ana', 'Antonio', 'Leticia', 'Marcela', 'Marcia', 'Maysa'];
 
