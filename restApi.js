@@ -3,6 +3,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerDocument = require('./swagger.json');
 const server = express();
+server.use(express.json());
 
 const swaggerOptions = {
     swaggerDefinition: {
@@ -77,10 +78,9 @@ server.get('/persons', (req, res) => {
 server.post('/persons', (req, res) => {
     const { name } = req.body;
     persons.push(name);
-    
     return res.json(persons);
-});
-
+  });
+  
 /**
  * @swagger
  * /persons/{index}:

@@ -63,6 +63,17 @@
                 "tags": [
                     "persons"
                 ],
+                "parameters": [
+                    {
+                      "name": "name",
+                      "in": "body",
+                      "description": "Name to add to the store",
+                      "required": true,
+                      "schema": {
+                        "$ref": "#/definitions/NewPerson"
+                      }
+                    }
+                  ],
                 "responses": {
                     "201": {
                         "description": "Create Person"
@@ -120,6 +131,15 @@
                         "required": true,
                         "description": "The id of the pet to retrieve",
                         "type": "string"
+                    },
+                    {
+                        "name": "name",
+                        "in": "body",
+                        "description": "Name to add to the store",
+                        "required": true,
+                        "schema": {
+                          "$ref": "#/definitions/NewPerson"
+                        }
                     }
                 ],
                 "responses": {
@@ -209,5 +229,35 @@
                 }
             }
         }
+    },
+    "NewPerson": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "tag": {
+            "type": "string"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
     }
-}
