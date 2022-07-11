@@ -124,6 +124,6 @@ server.delete('/persons/:index', (req, res) => {
     return res.json({ message: `O nome ${person} for removido` });
 });
 
-app.listen(PORT, () =>
+server.listen(PORT, () =>
   console.log(`Application is listening on port ${PORT}!`)
 );
