@@ -85,7 +85,7 @@
                 ],
                 "parameters": [
                     {
-                        "name": "petId",
+                        "name": "index",
                         "in": "path",
                         "required": true,
                         "description": "The id of the pet to retrieve",
@@ -115,7 +115,7 @@
                 ],
                 "parameters": [
                     {
-                        "name": "petId",
+                        "name": "index",
                         "in": "path",
                         "required": true,
                         "description": "The id of the pet to retrieve",
@@ -142,6 +142,15 @@
                 "operationId": "deletePersonById",
                 "tags": [
                     "persons"
+                ],
+                "parameters": [
+                    {
+                        "name": "index",
+                        "in": "path",
+                        "required": true,
+                        "description": "The id of the pet to retrieve",
+                        "type": "string"
+                    }
                 ],
                 "responses": {
                     "200": {
